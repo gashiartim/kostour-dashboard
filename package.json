@@ -1,0 +1,75 @@
+{
+  "scripts": {
+    "dev": "PORT=3000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --setupFilesAfterEnv",
+    "eject": "react-scripts eject",
+    "generate:icons": "node scripts/generate-icons.js"
+  },
+  "name": "remittance-agent-portal-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@headlessui/react": "^1.4.3",
+    "@heroicons/react": "^1.0.5",
+    "@hookform/devtools": "^4.0.2",
+    "@hookform/resolvers": "^2.8.8",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/node": "^16.11.21",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "axios": "^0.25.0",
+    "classnames": "^2.3.1",
+    "filepond": "^4.30.3",
+    "filepond-plugin-file-validate-size": "^2.2.5",
+    "filepond-plugin-file-validate-type": "^1.2.6",
+    "filepond-plugin-image-exif-orientation": "^1.0.11",
+    "filepond-plugin-image-preview": "^4.6.10",
+    "jwt-decode": "^3.1.2",
+    "localforage": "^1.10.0",
+    "nanoid": "^3.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-error-boundary": "^3.1.4",
+    "react-filepond": "^7.1.1",
+    "react-hook-form": "^7.25.3",
+    "react-query": "^3.34.12",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
+    "react-table": "^7.7.0",
+    "react-test-renderer": "^17.0.2",
+    "react-toastify": "^8.1.1",
+    "svgo": "^2.8.0",
+    "typescript": "^4.5.5",
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-table": "^7.7.9",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.5",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^3.0.17"
+  }
+}

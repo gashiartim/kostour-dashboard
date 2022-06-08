@@ -1,0 +1,25 @@
+@keyframes Icon-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+.Icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  display: block;
+}
+
+.Icon > svg {
+  display: block;
+}
+
+.Icon--spin > svg {
+  -webkit-animation: Icon-spin 2s infinite linear;
+  animation: Icon-spin 2s infinite linear;
+}

@@ -1,0 +1,17 @@
+@tailwind components;
+
+@layer components {
+  .link {
+    @apply text-blue-500 underline hover:cursor-pointer hover:text-blue-600;
+  }
+  .btn-primary {
+    @apply bg-blue-600 w-max text-sm flex items-center justify-center py-2.5 px-4 font-medium rounded-md text-white  hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-white w-max text-sm flex items-center justify-center py-2.5 px-4 font-medium rounded-md text-blue-600  hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed border-[2px] border-blue-600;
+  }
+
+  .default-transition {
+    @apply transition-all duration-75 ease-in-out;
+  }
+}
