@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "../Button/Button";
 import { TrashIcon } from "@heroicons/react/solid";
-import { useDeleteCategory } from "../../../lib/hooks/mutations/category/useDeleteCategory";
 import { useConfirmation } from "../../../lib/context/ConfirmationContext/ConfirmationContext";
 import { useLocation } from "react-router-dom";
+import useDeleteUser from "../../../lib/hooks/mutations/User/useDeleteUser";
 
 const mutations = {
-  "/categories": useDeleteCategory,
+  "/users": useDeleteUser,
 };
 
 export const DeleteCell = ({ row }: any) => {
@@ -16,12 +16,12 @@ export const DeleteCell = ({ row }: any) => {
 
   const key = pathname.split("/")[1];
 
-  // const { mutate } = mutations[("/" + key) as keyof typeof mutations]();
+  const { mutate } = mutations[("/" + key) as keyof typeof mutations]();
 
   async function handleClick() {
     try {
       await confirm({ text: "Are you sure?" });
-      // mutate(id);
+      mutate(id);
     } catch (error: any) {}
   }
 

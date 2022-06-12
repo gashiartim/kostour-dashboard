@@ -16,6 +16,17 @@ import Users from "../pages/Users/Users";
 import User from "../pages/Users/User";
 import CreateUser from "../pages/Users/CreateUser";
 import EditUser from "../pages/Users/EditUser";
+import Locations from "../pages/Locations/Locations";
+import EditLocation from "../pages/Locations/EditLocation";
+import Location from "../pages/Locations/Location";
+import CreateLocation from "../pages/Locations/CreateLocation";
+import Restaurants from "../pages/Restaurants/Restaurants";
+import Restaurant from "../pages/Restaurants/Restaurant";
+import CreateRestaurant from "../pages/Restaurants/CreateRestaurant";
+import EditRestaurant from "../pages/Restaurants/EditRestaurant";
+import Homepage from "../pages/Homepage/Homepage";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorMessage } from "../components/shared/ErrorMessage/ErrorMessage";
 
 export enum RouteType {
   PUBLIC,
@@ -32,9 +43,67 @@ interface IAppRoute extends RouteProps {
 export const AppRoutes: IAppRoute[] = [
   {
     type: RouteType.PRIVATE,
+    path: "homepage",
+    permissions: [],
+    element: <Homepage />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "locations",
+    permissions: [],
+    element: <Locations />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "locations/:locationId",
+    permissions: [],
+    element: <Location />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "locations/create",
+    permissions: [],
+    element: <CreateLocation />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "locations/edit/:locationId",
+    permissions: [],
+    element: <EditLocation />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "restaurants",
+    permissions: [],
+    element: <Restaurants />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "restaurants/:restaurantId",
+    permissions: [],
+    element: <Restaurant />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "restaurants/create",
+    permissions: [],
+    element: <CreateRestaurant />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "restaurants/edit/:restaurantId",
+    permissions: [],
+    element: <EditRestaurant />,
+  },
+  {
+    type: RouteType.PRIVATE,
     path: "users",
     permissions: [],
-    element: <Users />,
+    element: (
+      <ErrorBoundary FallbackComponent={ErrorMessage}>
+        <Users />
+      </ErrorBoundary>
+    ),
   },
   {
     type: RouteType.PRIVATE,

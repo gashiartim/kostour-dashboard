@@ -1,10 +1,6 @@
 import { useMutation, UseMutationOptions, useQueryClient } from "react-query";
 import { toast } from "react-toastify";
-import {
-  deleteCategory,
-  ICategory,
-  updateCategory,
-} from "../../../../api/Category";
+import { deleteCategory, ICategory } from "../../../../api/Category";
 import { categoryKeys } from "../../keys/categoryKeys";
 
 export function useDeleteCategory(

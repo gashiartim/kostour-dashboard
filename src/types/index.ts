@@ -23,5 +23,13 @@ export interface InputField {
   name: string;
   type: string;
   label: string;
+  placeholder?: string;
   disabled?: boolean;
+}
+
+export interface ITableColumn {
+  header: string;
+  accessor: string;
+  Cell?: any;
+  render?: any;
 }

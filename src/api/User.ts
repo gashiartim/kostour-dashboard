@@ -82,3 +82,58 @@ export const changePassword = async (changePasswordData: IChangePasswordData) =>
     "users/change-password",
     changePasswordData
   );
+
+export interface IGetAllUsersResponse {
+  data: Array<IUser>;
+  total: number;
+}
+
+export const getAllUsers = () =>
+  apiRequest<any, IGetAllUsersResponse>("get", "users");
+
+export const getUser = (id: string) =>
+  apiRequest<any, IUser>("get", `users/${id}`);
+
+export interface IUpdateUserRequest
+  extends Omit<
+    IUser,
+    "created_at" | "updated_at" | "role_id" | "role" | "birthday"
+  > {
+  role?: any;
+  role_id?: any;
+}
+
+export const updateUser = async ({
+  role,
+  ...updateUserDto
+}: IUpdateUserRequest) => {
+  return await apiRequest<IUpdateUserRequest, IUser>(
+    "put",
+    `users/${updateUserDto.id}`,
+    {
+      ...updateUserDto,
+      role_id: role.id,
+    }
+  );
+};
+
+export interface ICreateUserRequest
+  extends Omit<
+    IUser,
+    "created_at" | "updated_at" | "role_id" | "role" | "birthday" | "id"
+  > {
+  role?: any;
+  role_id?: any;
+}
+
+export const createUser = async ({
+  role,
+  ...updateUserDto
+}: ICreateUserRequest) => {
+  return await apiRequest<ICreateUserRequest, IUser>("post", `users`, {
+    ...updateUserDto,
+    role_id: role.id,
+  });
+};
+
+export const deleteUser = (id: string) => apiRequest("delete", `users/${id}`);

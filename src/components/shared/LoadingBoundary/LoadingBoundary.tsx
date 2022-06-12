@@ -3,14 +3,19 @@ import React from "react";
 type Props = {
   isLoading: boolean;
   children: React.ReactNode;
+  message?: string;
 };
 
-const LoadingBoundary = (props: Props) => {
-  if (props.isLoading) {
-    return <div className="flex justify-center w-full">Loading data...</div>;
+const LoadingBoundary = ({
+  isLoading,
+  children,
+  message = "Loading data...",
+}: Props) => {
+  if (isLoading) {
+    return <div className="flex justify-center w-full">{message}</div>;
   }
 
-  return <>{props.children}</>;
+  return <>{children}</>;
 };
 
 export default LoadingBoundary;
