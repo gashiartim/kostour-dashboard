@@ -20,7 +20,8 @@ export interface IMedia {
   ext: string;
 }
 
-export interface IDefaultResponse {
+export interface IDefaultResponse<data> {
+  data: data;
   total: number;
   lastPage: number;
   currentPage: number;

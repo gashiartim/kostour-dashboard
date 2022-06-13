@@ -4,9 +4,11 @@ import { TrashIcon } from "@heroicons/react/solid";
 import { useConfirmation } from "../../../lib/context/ConfirmationContext/ConfirmationContext";
 import { useLocation } from "react-router-dom";
 import useDeleteUser from "../../../lib/hooks/mutations/User/useDeleteUser";
+import useDeleteRestaurant from "../../../lib/hooks/mutations/Restaurant/useDeleteRestaurant";
 
 const mutations = {
   "/users": useDeleteUser,
+  "/restaurants": useDeleteRestaurant,
 };
 
 export const DeleteCell = ({ row }: any) => {

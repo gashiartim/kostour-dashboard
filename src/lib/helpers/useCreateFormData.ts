@@ -15,13 +15,13 @@ export function useCreateFormData(): CreateFormDataTypes {
   ): FormData | undefined => {
     const formData = new FormData();
 
-    console.log(data);
+    // console.log(data);
 
     for (const key in data) {
       let indexKey = key as keyof typeof data;
 
       if (!skip?.includes(key) && Array.isArray(data[indexKey])) {
-        console.log("data[indedKey]", data[indexKey]);
+        // console.log("data[indedKey]", data[indexKey]);
 
         Array(...(data[indexKey] as any[])).forEach((data, index) => {
           formData.append("links[]", JSON.stringify(data));

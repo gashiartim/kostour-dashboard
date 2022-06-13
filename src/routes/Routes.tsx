@@ -43,7 +43,7 @@ interface IAppRoute extends RouteProps {
 export const AppRoutes: IAppRoute[] = [
   {
     type: RouteType.PRIVATE,
-    path: "homepage",
+    path: "home",
     permissions: [],
     element: <Homepage />,
   },
@@ -75,7 +75,11 @@ export const AppRoutes: IAppRoute[] = [
     type: RouteType.PRIVATE,
     path: "restaurants",
     permissions: [],
-    element: <Restaurants />,
+    element: (
+      <ErrorBoundary FallbackComponent={ErrorMessage}>
+        <Restaurants />
+      </ErrorBoundary>
+    ),
   },
   {
     type: RouteType.PRIVATE,

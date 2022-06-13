@@ -8,6 +8,7 @@ import imagePlaceholder from "../../../assets/images/image-placeholder.jpeg";
 type Props = {
   file: any;
   className?: string;
+  wrapperClassName?: string;
   placeholder?: string;
   onUpdate: (value: any) => void;
   label?: string;
@@ -16,12 +17,14 @@ type Props = {
 
 const FileUploader = ({
   className,
+  wrapperClassName,
   onUpdate,
   file,
   placeholder,
   label = "File",
   name = "thumbnail",
 }: Props) => {
+  console.log({ file });
   const photoInputRef: any = useRef(null);
 
   function handleClick() {
@@ -29,7 +32,7 @@ const FileUploader = ({
   }
 
   return (
-    <div className="">
+    <div className={wrapperClassName}>
       <label
         htmlFor=""
         className="block mb-1 mr-auto text-sm font-semibold w-max"
@@ -46,9 +49,9 @@ const FileUploader = ({
         {placeholder || file ? (
           <img
             src={
-              file
-                ? URL.createObjectURL(file)
-                : process.env.REACT_APP_PHOTOS_API + "" + placeholder
+              placeholder
+                ? process.env.REACT_APP_PHOTOS_API + "" + placeholder
+                : URL.createObjectURL(file)
             }
             alt=""
             className="w-[300px] h-[100px] bg-gray-400 object-cover object-center"
