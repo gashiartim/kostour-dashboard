@@ -25,9 +25,9 @@ export default function useCreateRestaurant(
       toast.success("Restaurant created successfully");
       navigate(-1);
     },
-    onError: (err) => {
+    onError: (err: any) => {
       toast.error(
-        err.response.data.error ||
+        err.response?.data?.error ||
           "Couldn't create restaurant, something wrong happened"
       );
     },

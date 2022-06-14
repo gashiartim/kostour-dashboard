@@ -1,12 +1,17 @@
 import { useQuery, UseQueryOptions } from "react-query";
-import { getCategories, IFilters } from "../../../../api/Category";
+import {
+  getCategories,
+  ICategoriesResponse,
+  IFilters,
+} from "../../../../api/Category";
 import { categoryKeys } from "../../keys/categoryKeys";
+import { IOption } from "../../../../components/shared/MultipleSelect/MultipleSelect";
 
 export function useCategories(
   filters?: IFilters,
-  options?: UseQueryOptions<unknown, unknown, any, any>
+  options?: UseQueryOptions<ICategoriesResponse, any, IOption[], any>
 ) {
-  return useQuery(
+  return useQuery<ICategoriesResponse, any, IOption[], any>(
     categoryKeys.categories(filters),
     () => getCategories(filters),
     {

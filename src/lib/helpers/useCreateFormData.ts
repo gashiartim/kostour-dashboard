@@ -20,11 +20,11 @@ export function useCreateFormData(): CreateFormDataTypes {
     for (const key in data) {
       let indexKey = key as keyof typeof data;
 
-      if (!skip?.includes(key) && Array.isArray(data[indexKey])) {
+      if (!skip?.includes(indexKey) && Array.isArray(data[indexKey])) {
         // console.log("data[indedKey]", data[indexKey]);
 
         Array(...(data[indexKey] as any[])).forEach((data, index) => {
-          formData.append("links[]", JSON.stringify(data));
+          formData.append(`${indexKey}[]`, data);
         });
       }
       if (data[indexKey] || typeof data[indexKey] === "boolean") {

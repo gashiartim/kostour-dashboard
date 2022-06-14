@@ -26,7 +26,7 @@ const EditCategory = (props: Props) => {
           <EditCategoryForm data={data} />
         </LoadingBoundary>
       </Container>
-
+      {/* 
       {data && data.level <= 1 && (
         <Container className="mt-7">
           <TitleWithHrLine text="Sub-Categories" />
@@ -35,7 +35,7 @@ const EditCategory = (props: Props) => {
             isLoading={isLoading}
           />
         </Container>
-      )}
+      )} */}
     </>
   );
 };

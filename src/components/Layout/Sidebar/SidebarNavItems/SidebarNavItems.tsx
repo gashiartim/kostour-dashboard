@@ -36,6 +36,27 @@ export const SidebarNavItems = (props: Props) => {
 
 const navItems: Array<INavItem> = [
   {
+    id: 10,
+    label: "Categories",
+    icon: <MenuAlt1Icon className="w-6 mr-1" />,
+    to: "locations",
+    routes: ["/categories", "/categories/create"],
+    childrenOptions: [
+      {
+        id: 11,
+        label: "List",
+        icon: <ViewListIcon className="w-5 mr-1" />,
+        to: "categories",
+      },
+      {
+        id: 12,
+        label: "New",
+        icon: <PlusCircleIcon className="w-5 mr-1" />,
+        to: "categories/create",
+      },
+    ],
+  },
+  {
     id: 1,
     label: "Locations",
     icon: <LocationMarkerIcon className="w-6 mr-1" />,

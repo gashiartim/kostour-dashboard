@@ -31,6 +31,8 @@ const CreateCategoryForm = (props: Props) => {
 
   const { data, isLoading } = useCategories({ top_level_categories: true });
 
+  const navigate = useNavigate();
+
   const {
     register,
     formState: { errors },
@@ -46,10 +48,9 @@ const CreateCategoryForm = (props: Props) => {
       toast.success("Category created successfully");
       resetTags();
       reset();
+      navigate(-1);
     },
   });
-
-  const navigate = useNavigate();
 
   //sends us back (consider to refact and set it to send us back to /businesses)
   function handleCancel() {
@@ -119,7 +120,7 @@ const CreateCategoryForm = (props: Props) => {
             />
           );
         })}
-        <Controller
+        {/* <Controller
           control={control}
           name="parent_id"
           render={({
@@ -132,7 +133,7 @@ const CreateCategoryForm = (props: Props) => {
               name={name}
               onChange={onParentCategorySelection}
               value={selectedCategory}
-              options={data}
+              options={data as any}
               className="w-[90%]"
               error={errors?.parent_id}
               inputRef={ref}
@@ -141,7 +142,7 @@ const CreateCategoryForm = (props: Props) => {
               isLoading={isLoading}
             />
           )}
-        />
+        /> */}
         <BooleanInput
           onChange={handleBooleanInputChange}
           label="Top Category"
@@ -153,12 +154,12 @@ const CreateCategoryForm = (props: Props) => {
         label="Profile Picture"
         className="mx-auto md:mx-[0]"
       />
-      <TagInput
+      {/* <TagInput
         onAdd={onAdd}
         onChange={onChange}
         data={{ tags, name, email, href }}
         onClearTag={onClearTag}
-      />
+      /> */}
       <div className="flex justify-end">
         <ActionButtons
           showSubmitBtn={false}

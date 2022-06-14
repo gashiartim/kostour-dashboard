@@ -5,10 +5,14 @@ import { useConfirmation } from "../../../lib/context/ConfirmationContext/Confir
 import { useLocation } from "react-router-dom";
 import useDeleteUser from "../../../lib/hooks/mutations/User/useDeleteUser";
 import useDeleteRestaurant from "../../../lib/hooks/mutations/Restaurant/useDeleteRestaurant";
+import useDeleteLocation from "../../../lib/hooks/mutations/Location/useDeleteLocation";
+import { useDeleteCategory } from "../../../lib/hooks/mutations/category/useDeleteCategory";
 
 const mutations = {
   "/users": useDeleteUser,
   "/restaurants": useDeleteRestaurant,
+  "/locations": useDeleteLocation,
+  "/categories": useDeleteCategory,
 };
 
 export const DeleteCell = ({ row }: any) => {

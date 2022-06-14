@@ -34,19 +34,35 @@ export interface IGetAllLocationsResponse
 export const getAllLocations = () =>
   apiRequest<any, IGetAllLocationsResponse>("get", "locations");
 
-export const getRestaurant = (id: string) =>
-  apiRequest<any, IRestaurant>("get", `restaurants/${id}`);
+export const getLocation = (id: string) =>
+  apiRequest<any, ILocation>("get", `locations/${id}`);
 
-export const deleteRestaurant = (id: string) =>
-  apiRequest<any, any>("delete", `restaurants/${id}`);
+export const deleteLocation = (id: string) =>
+  apiRequest("delete", `locations/${id}`);
 
-export interface IUpdateRestaurantRequest extends Partial<IRestaurant> {}
+export interface IUpdateLocationRequest extends Partial<ILocation> {
+  formData: { [key: string]: any };
+}
 
-export const updateRestaurant = (updateResturantData: any) =>
-  apiRequest<IUpdateRestaurantRequest, IRestaurant>(
+export const updateLocation = (updateLocationData: IUpdateLocationRequest) =>
+  apiRequest<IUpdateLocationRequest, ILocation>(
     "patch",
-    `restaurants/${updateResturantData.id}`,
-    {
-      ...updateResturantData,
-    }
+    `locations/${updateLocationData.id}`,
+    updateLocationData.formData as any
+  );
+
+export interface ICreateLocationRequest {
+  formData: { [key: string]: any };
+  // name: string;
+  // description: string;
+  // whatCanYouDo: string;
+  // categories: string[];
+  // thumbnail?: any;
+}
+
+export const createLocation = (createLocationData: ICreateLocationRequest) =>
+  apiRequest<ICreateLocationRequest, ILocation>(
+    "post",
+    `locations`,
+    createLocationData.formData as any
   );

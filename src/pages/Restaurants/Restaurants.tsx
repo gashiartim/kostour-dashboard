@@ -16,7 +16,7 @@ import { ITableColumn } from "../../types";
 type Props = {};
 
 const Restaurants = (props: Props) => {
-  const { data, isLoading, error } = useRestaurants();
+  const { data, isLoading } = useRestaurants();
 
   return (
     <Container>

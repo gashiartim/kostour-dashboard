@@ -148,7 +148,7 @@ const EditCategoryForm = (props: Props) => {
               name={name}
               onChange={onParentCategorySelection}
               value={selectedCategory}
-              options={data}
+              options={data as any}
               className="w-[90%]"
               error={errors?.parent_id}
               inputRef={ref}
@@ -172,12 +172,12 @@ const EditCategoryForm = (props: Props) => {
         placeholder={props.data.thumbnail?.media.url}
         className="mx-auto md:mx-[0]"
       />
-      <TagInput
+      {/* <TagInput
         onAdd={onAdd}
         onChange={onChange}
         data={{ name, href, email, tags }}
         onClearTag={onClearTag}
-      />
+      /> */}
       <div className="flex justify-end">
         <ActionButtons
           showSubmitBtn={false}

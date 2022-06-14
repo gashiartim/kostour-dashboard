@@ -27,7 +27,6 @@ const EditRestaurantForm = ({ data }: Props) => {
     formState: { errors },
     control,
     handleSubmit,
-    setValue,
     getValues,
   } = useEditRestaurantForm({
     defaultValues: {
@@ -38,8 +37,6 @@ const EditRestaurantForm = ({ data }: Props) => {
       thumbnail: data?.thumbnail,
     },
   });
-
-  console.log({ "data?.thumbnail": data?.thumbnail });
 
   const editRestaurant = useEditRestaurant();
 
@@ -53,9 +50,6 @@ const EditRestaurantForm = ({ data }: Props) => {
       },
       ["sub_categories"]
     );
-    // console.log({ editRestaurantFormData });
-
-    // console.log(getValues("thumbnail"));
 
     editRestaurant.mutate({ id: data?.id || "", formData });
   }

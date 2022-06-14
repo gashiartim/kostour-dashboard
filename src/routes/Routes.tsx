@@ -27,6 +27,10 @@ import EditRestaurant from "../pages/Restaurants/EditRestaurant";
 import Homepage from "../pages/Homepage/Homepage";
 import { ErrorBoundary } from "react-error-boundary";
 import { ErrorMessage } from "../components/shared/ErrorMessage/ErrorMessage";
+import EditCategory from "../pages/Categories/EditCategory";
+import CreateCategory from "../pages/Categories/CreateCategory";
+import Category from "../pages/Categories/Category";
+import Categories from "../pages/Categories/Categories";
 
 export enum RouteType {
   PUBLIC,
@@ -46,6 +50,30 @@ export const AppRoutes: IAppRoute[] = [
     path: "home",
     permissions: [],
     element: <Homepage />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "categories",
+    permissions: [],
+    element: <Categories />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "categories/:categoryId",
+    permissions: [],
+    element: <Category />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "categories/create",
+    permissions: [],
+    element: <CreateCategory />,
+  },
+  {
+    type: RouteType.PRIVATE,
+    path: "categories/edit/:categoryId",
+    permissions: [],
+    element: <EditCategory />,
   },
   {
     type: RouteType.PRIVATE,

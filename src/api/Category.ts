@@ -1,9 +1,8 @@
 import { apiRequest } from "./Api";
 import { IDefaultResponse, IThumbnail } from "./interfaces";
 
-interface ICategoriesResponse {
-  data: Array<ICategory>;
-}
+export type ICategoriesResponse = Array<ICategory>;
+
 export interface ICategory {
   id: string;
   name: string;

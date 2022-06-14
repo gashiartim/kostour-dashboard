@@ -15,7 +15,11 @@ const Categories = (props: Props) => {
     <Container>
       <TitleWithHrLine text="Categories List" />
       <ErrorBoundary FallbackComponent={ErrorMessage}>
-        <CategoriesTable className="mt-5" data={data} isLoading={isLoading} />
+        <CategoriesTable
+          className="mt-5"
+          data={data as any}
+          isLoading={isLoading}
+        />
       </ErrorBoundary>
     </Container>
   );

@@ -2,8 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, UseFormProps } from "react-hook-form";
 import * as YUP from "yup";
 import { IThumbnail } from "../../../../api/interfaces";
-import { ILocation } from "../../../../api/Restaurant";
-import { IRole } from "../../../../api/Role";
+import { ILocation } from "../../../../api/Locations";
 
 export type EditRestaurantFormValues = {
   name: string;

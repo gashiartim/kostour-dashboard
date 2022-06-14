@@ -1,15 +1,6 @@
 import { apiRequest } from "./Api";
 import { IDefaultResponse, IThumbnail } from "./interfaces";
-
-export interface ILocation {
-  id: string;
-  name: string;
-  description: string;
-  whatCanYouDo: string;
-  numberOfVisits: string;
-  created_at: string;
-  updated_at: string;
-}
+import { ILocation } from "./Locations";
 
 export interface IRestaurant {
   id: string;

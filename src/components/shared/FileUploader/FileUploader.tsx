@@ -24,7 +24,6 @@ const FileUploader = ({
   label = "File",
   name = "thumbnail",
 }: Props) => {
-  console.log({ file });
   const photoInputRef: any = useRef(null);
 
   function handleClick() {
