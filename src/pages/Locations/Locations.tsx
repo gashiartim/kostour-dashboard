@@ -47,6 +47,7 @@ export const locationTableColumns: ITableColumn[] = [
   {
     header: "What can you do",
     accessor: "whatCanYouDo",
+    Cell: SeeMoreCell,
   },
   {
     header: "Views",

@@ -1,5 +1,5 @@
 import { apiRequest } from "./Api";
-import { IDefaultResponse, IThumbnail } from "./interfaces";
+import { IThumbnail } from "./interfaces";
 
 export type ICategoriesResponse = Array<ICategory>;
 

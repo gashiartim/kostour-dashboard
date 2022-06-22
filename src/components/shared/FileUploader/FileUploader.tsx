@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { UseFormRegister } from "react-hook-form";
 import cs from "classnames";
 import { PencilIcon } from "@heroicons/react/solid";
 
